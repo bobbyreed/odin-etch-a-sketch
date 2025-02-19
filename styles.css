@@ -1,18 +1,29 @@
 body{
     background-color: darkslateblue;
+    gap: 20px;
+    text-align: center;
+    color:aliceblue;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
 #container{
     display: flex;  
     flex-flow: row wrap;
     flex-grow: 1;
     outline: auto;
     width:160px;
+    justify-self: center;
+    margin: 25px;
 }
 
 .grid{
     flex-grow: 1;
-    background-color: aliceblue;
+    background-color: rgb(81, 83, 85);
     width: 10px;
     height: 10px;
 }
