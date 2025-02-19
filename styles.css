@@ -1,0 +1,24 @@
+body{
+    background-color: darkslateblue;
+}
+
+#container{
+    display: flex;  
+    flex-flow: row wrap;
+    flex-grow: 1;
+    outline: auto;
+    width:160px;
+}
+
+.grid{
+    flex-grow: 1;
+    background-color: aliceblue;
+    width: 10px;
+    height: 10px;
+}
+
+.grid-colored{
+    background-color: black;
+    width: 10px;
+    height: 10px;
+}
