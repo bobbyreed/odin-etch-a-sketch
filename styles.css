@@ -7,9 +7,11 @@ body{
 
 .menu{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: space-around;
+    border: aliceblue solid;
+    border-radius: 15px;
+    padding: 5px;
 }
 #container{
     display: flex;  
@@ -32,4 +34,32 @@ body{
     background-color: black;
     width: 10px;
     height: 10px;
+}
+
+#reset{
+    justify-self: flex-start;
+}
+
+#reset-app{
+    justify-self: flex-end;
+}
+
+.journal{
+    background-color: wheat;
+    color: darkslategray;
+}
+
+.signature{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: blanchedalmond;
+}
+.form{
+    display:block;
+
+}
+
+.cell{
+    border: black solid 2px;
+    min-width: 5px;
+    min-height: 5px;
 }
