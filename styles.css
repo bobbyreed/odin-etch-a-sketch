@@ -17,7 +17,6 @@ body{
     display: flex;  
     flex-flow: row wrap;
     flex-grow: 1;
-    outline: auto;
     width:160px;
     justify-self: center;
     margin: 25px;
@@ -45,21 +44,44 @@ body{
 }
 
 .journal{
+    display: flex;
+    flex-direction: column;
     background-color: wheat;
     color: darkslategray;
+    text-align:start;
+    width: 50%;
+    margin:auto;
+    border: whitesmoke solid 6px;
+    outline:auto;
+    padding: 10px;
 }
 
 .signature{
+    padding:10px;
+    border:slategray solid 1px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: blanchedalmond;
 }
-.form{
+.form label, .form input{
     display:block;
+    
+}
 
+.form button{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 10px;
 }
 
 .cell{
     border: black solid 2px;
     min-width: 5px;
     min-height: 5px;
+}
+
+.controls-container{
+    display: grid;
+    width: 100%;
+    margin-top: 10px;
 }

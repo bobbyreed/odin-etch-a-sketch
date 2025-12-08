@@ -1,20 +1,11 @@
 import { container } from "../App.js";
 
-const resetButton = document.querySelector("#reset");
-resetButton.addEventListener("click", () => resetGrid());
-
 const firstButton = document.querySelector("#first");
 firstButton.addEventListener("click", () => resetGrid());
 
 if(container == null){
     console.log("container is null");
 }
-
-let gridSize = prompt("What width/height square would you like? (Max 100)", 16);
-if(gridSize > 100){
-    gridSize = 100;
-}
-createDivs(gridSize);
 
 function createDivs(num){
     console.log(num);
