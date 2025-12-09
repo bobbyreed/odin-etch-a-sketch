@@ -1,5 +1,7 @@
 import { container } from "../App.js";
 
+
+
 const secondButton = document.querySelector("#second");
 secondButton.addEventListener("click", () => startGrid());
 
@@ -18,6 +20,8 @@ function createBoard(columns, rows){
 
     //reset
     container.innerHTML = " ";
+    let cssWidth = "100";
+    container.setAttribute("style", "width:"+ cssWidth +"%;");
     
     //create handles
     let row = [];
@@ -26,34 +30,34 @@ function createBoard(columns, rows){
     let controlsContainer = document.createElement('div');
     controlsContainer.classList.add('controls-container');
     let vControl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    vControl.innerHTML = '<circle r="45" cx="50" cy="50" fill="white" /><text id="centeredLetter" x="10%" y="10%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="black">V</text>'
+    vControl.innerHTML = '<circle r="25" cx="50" cy="50" fill="white" /><text id="centeredLetter" x="30%" y="30%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="black">V</text>'
     vControl.classList.add('height-control');
     let vControlText = document.createElement('p');
     vControlText.innerText = "Control with A and D Keys (A = Counter-Clockwise, D = Clockwise)";
     vControl.appendChild(vControlText);
     let hControl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    hControl.innerHTML = '<circle r="45" cx="50" cy="50" fill="white" /><text id="centeredLetter" x="30%" y="30%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="black">H</text>'
+    hControl.innerHTML = '<circle r="25" cx="50" cy="50" fill="white" /><text id="centeredLetter" x="30%" y="30%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="black">H</text>'
     hControl.classList.add('width-control');
     let hControlText = document.createElement('p');
     hControlText.innerText = "Control with Left and Right Arrow Keys (Left = Counter-Clockwise, Right = Clockwise)";
     hControl.appendChild(hControlText);
     controlsContainer.appendChild(vControl);
-    controlsContainer.appendChild(hControl);    
+    controlsContainer.appendChild(hControl);
+    controlsContainer.appendChild(vControlText);  
+    controlsContainer.appendChild(hControlText);  
     
     for(let i = 0; i < rows;i++){
         row[i] = document.createElement('div');
-        row[i].classList.add('cell');
+        row[i].classList.add(`column-${i+1}`);
         for(let j = 0; j < columns; j++){
             column[j] = document.createElement('div');
-            column[j].classList.add['cell']
+            column[j].classList.add(`cell-${j+1}`);
             row[i].appendChild(column[j]);
         }
         container.appendChild(row[i]);
     }
     container.appendChild(controlsContainer);
     console.log(`Board built with ${row.length} rows and ${column.length} columns.`);
-
-    
 }
 
 function createForm(name, prompt){

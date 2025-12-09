@@ -81,7 +81,25 @@ body{
 }
 
 .controls-container{
-    display: grid;
-    width: 100%;
-    margin-top: 10px;
+    display: flex;
+    margin-top: -10px;
+    justify-items: flex-start;
+    align-items: space-between;
+}
+
+.controls-container svg{
+    display:flex;
+    margin-top: -10px;
+    
+}
+
+[class*="column"]{
+    background-color: grey;
+    display: block;
+    min-width: 10px;
+}
+
+[class*="cell"]{
+    display: flex;
+    min-height: 10px;
 }
